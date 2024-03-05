@@ -14,9 +14,6 @@ async fn main() {
 
     println!("WebSocket handshake has been successfully completed");
 
-    // let send_future = ws_stream.send(Message::Text("Hello Websocket".to_string()));
-    // send_future.await.expect("failed to send message to web socket");
-
     while let Some(message) = ws_stream.next().await {
         match  message {
             Ok(msg) => {
